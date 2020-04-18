@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/info"
+        android:src="@drawable/ic_info"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="6dp"
+        android:background="#fff"
+        android:layout_toRightOf="@+id/tv_header"/>
+    
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/swipeRefresh"
+        android:layout_below="@+id/layout_divider">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="match_parent"
+            android:id="@+id/rv_home"
+            tools:listitem="@android:layout/activity_list_item">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <TextView
+        android:id="@+id/tv_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text=" Global Cases"
+        android:textColor="#000"
+        android:textSize="24dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:textAlignment="center"/>
+
+    <LinearLayout
+        android:id="@+id/layout_global"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_below="@+id/tv_header"
+        android:layout_marginBottom="-149dp"
+        android:weightSum="3">
+
+        <TextView
+            android:id="@+id/tvLabelTotalConfirmed"
+            style="@style/LabelFontStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Confirmed"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="@color/totalConfirmed" />
+
+        <TextView
+            android:id="@+id/tvLabelTotalRecovered"
+            style="@style/LabelFontStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Recovered"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/totalRecovered"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tvLabelTotalDeath"
+            style="@style/LabelFontStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Death"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/totalDeath"
+            android:layout_weight="1"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/tv_header">
+
+        <TextView
+            android:id="@+id/tvTotalConfirmed"
+            style="@style/TotalFontStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/totalConfirmed"
+            tools:text="16258"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tvTotalRecovered"
+            style="@style/TotalFontStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/totalRecovered"
+            tools:text="16258"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tvTotalDeath"
+            style="@style/TotalFontStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/totalDeath"
+            tools:text="8"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:id="@+id/layout_aff"
+        android:layout_marginBottom="2dp"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/layout_data">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Affected Countries   "
+            android:textSize="18sp"
+            android:fontFamily="@font/poppins"
+            android:textColor="#000000"
+            android:id="@+id/affcountry" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/total_country"
+            tools:text="201"
+            android:fontFamily="@font/poppins"
+            android:textColor="#000"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="160dp"
+        android:layout_height="20dp"
+        android:id="@+id/layout_divider"
+        android:layout_below="@+id/layout_aff"
+        android:layout_marginBottom="2dp"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/divider" />
+    </LinearLayout>
+
+
+
+
+    <ProgressBar
+        android:id="@+id/progress_circular_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

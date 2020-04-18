@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_bg"
+        android:id="@+id/cv_main"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="13dp"
+        android:elevation="5dp"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/layout_title">
+
+
+            <TextView
+                android:id="@+id/tv_country"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="@font/acme"
+                android:gravity="center_horizontal"
+                android:text="Country"
+                android:layout_marginTop="4dp"
+                android:textColor="#000"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_affected_list"
+                style="@style/TotalFontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="4dp"
+                android:text="4562"
+                android:layout_marginRight="8dp"
+                android:textColor="@color/totalConfirmed"
+                android:layout_toLeftOf="@+id/tv_recovery_list"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_recovery_list"
+                style="@style/TotalFontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="4562"
+                android:layout_marginTop="4dp"
+                android:layout_alignParentRight="true"
+                android:textColor="#099142"
+                android:layout_marginRight="8dp"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                app:srcCompat="@drawable/ic_launcher_background" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_recovery_list"
+                android:layout_marginTop="8dp"
+                android:id="@+id/expandable_layout">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    android:id="@+id/head">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="Today Cases"
+                        android:gravity="center"
+                        android:textColor="#FF5722"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:gravity="center"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="Active"
+                        android:textColor="#FF9800"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:gravity="center"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="Total Deaths"
+                        android:textColor="@color/totalDeath"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    android:layout_below="@+id/head">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv_today_cases_list"
+                        android:textSize="18dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="45"
+                        android:textColor="#FF5722"
+                        android:gravity="center"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:id="@+id/tv_critical_list"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="2"
+                        android:gravity="center"
+                        android:textColor="#FF9800"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv_total_deaths"
+                        android:textSize="18dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="2"
+                        android:gravity="center"
+                        android:textColor="@color/totalDeath"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_remove_black_24dp"
+        android:scaleType="center"
+        android:layout_gravity="center_horizontal"/>
+
+
+</LinearLayout>
